@@ -1,0 +1,20 @@
+def calculate_way(v_l, t_l, v_d, t_d):
+    way_l = v_l * t_l
+    way_d = v_d * t_d
+    return way_l, way_d
+
+
+if __name__ == '__main__':
+    data_list1 = [60, 2]
+    data_list2 = [40, 2]
+    data_list3 = [100, 2]
+    data_dict1 = {'v_d': 60, 't_d': 3}
+    data_dict2 = {'t_d': 3, 'v_d': 50}
+    data_dict3 = {'v_d': 100, 't_d': 3}
+    data_matrix = [data_list1, data_list2, data_list3]
+    distance_data = [data_dict1, data_dict2, data_dict3]
+
+    if len(data_matrix) == len(distance_data):
+        for i in range(len(data_matrix)):
+            temp_data = calculate_way(*data_matrix[i], **distance_data[i])
+            print(f'Списки: {temp_data[0]}\nСловари: {temp_data[1]}\n')
